@@ -48,29 +48,29 @@ function App() {
 
   return (
     <div className='container'>
-        <Paper elevation={5} sx={{backgroundColor: '#d2d2d2', width: '50vw', height: '65vh' }}>
+        <Paper elevation={5} sx={{backgroundColor: '#d2d2d2', width: '50vw', minHeight: '70vh' }} className='max-md:min-w-[400px] max-[470px]:min-w-[300px] max-[365px]:min-w-[250px] max-[365px]:min-h-[320px]'>
 
-          <Box className='flex justify-between marker:px-10 w-full h-4/6 gap-10 py-6 px-10'>
+          <Box className='flex justify-between marker:px-10 w-full h-4/6 gap-10 py-6 px-10 max-md:py-5 max-[470px]:px-1  max-[365px]:gap-3 max-[365px]:px-0'>
             <span>
-              <Box className='w-32 text-9xl h-fit mb-5'>
+              <Box className='w-32 text-9xl h-fit mb-5 max-md:text-6xl max-[470px]:text-4xl max-[365px]:text-3xl '>
                 {userDisplay}
               </Box>
-              <p className='text-2xl font-semibold fixed'>User Pick</p>
+              <p className='text-2xl font-semibold fixed max-[365px]:text-lg max-[365px]:pl-3'>User Pick</p>
             </span>
             <span>
-              <Box className=' w-32 text-9xl h-fit mb-5'>
+              <Box className=' w-32 text-9xl h-fit mb-5 max-md:text-6xl max-[470px]:text-4xl max-[365px]:text-3xl'>
                 {computerDisplay}
               </Box>
-              <p className='text-2xl font-semibold'>Computer <br /> Pick</p>
+              <p className='text-2xl font-semibold fixed max-[365px]:text-lg max-[365px]:pl-2'>Computer <br /> Pick</p>
             </span>
           </Box>
           <section className='flex justify-center'>
             {isExploding && <ConfettiExplosion />}
           </section>
 
-          <Box className='mt-5' >
+          <Box className='pt-16 max-[365px]:pt-16' >
             <Button variant="contained" color={result === "You Win!" ? 'success' : 'primary'} onClick={roll} className='h-12 w-32 text-lg'>{result === "You Win!" ? 'Re-Roll' : 'Roll'}</Button>
-            <p className='text-5xl mt-2 font-semibold backdrop-blur-sm'>{result}</p>
+            <p className='text-5xl mt-2 pb-2 font-semibold backdrop-blur-sm max-md:mt-6 max-[365px]:text-4xl'>{result}</p>
           </Box>
         </Paper>
     </div>
